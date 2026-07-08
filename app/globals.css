@@ -1,0 +1,141 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Palette — unchanged nude */
+    --background: 36 30% 87%;
+    --foreground: 22 16% 16%;
+
+    --card: 36 33% 92%;
+    --card-foreground: 22 16% 16%;
+
+    --primary: 4 33% 34%;
+    --primary-foreground: 36 33% 95%;
+
+    --secondary: 36 24% 83%;
+    --secondary-foreground: 22 16% 18%;
+
+    --muted: 36 26% 85%;
+    --muted-foreground: 26 12% 38%;
+
+    --accent: 35 30% 82%;
+    --accent-foreground: 4 33% 30%;
+
+    --border: 36 22% 77%;
+    --input: 36 22% 77%;
+    --ring: 4 33% 34%;
+
+    --band: 38 24% 83%;
+
+    /* Pixel = hard corners */
+    --radius: 0px;
+
+    --font-display: "Pixelify Sans", system-ui, sans-serif;
+    --font-body: "IBM Plex Sans", system-ui, sans-serif;
+    --font-mono: Consolas, Monaco, 'Courier New', monospace;
+  }
+
+  .dark {
+    --background: 24 16% 10%;
+    --foreground: 38 30% 88%;
+
+    --card: 24 16% 12%;
+    --card-foreground: 38 30% 88%;
+
+    --primary: 12 38% 62%;
+    --primary-foreground: 24 16% 10%;
+
+    --secondary: 22 16% 16%;
+    --secondary-foreground: 38 30% 88%;
+
+    --muted: 24 14% 15%;
+    --muted-foreground: 32 13% 62%;
+
+    --accent: 24 20% 18%;
+    --accent-foreground: 12 38% 75%;
+
+    --border: 26 14% 24%;
+    --input: 26 14% 24%;
+    --ring: 12 38% 62%;
+
+    --band: 24 16% 8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  html {
+    scroll-behavior: smooth;
+    /* VT323 has a small x-height; nudge the base up for comfortable reading */
+    font-size: 16px;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-body);
+  }
+  img {
+    image-rendering: pixelated;
+  }
+  ::selection {
+    @apply bg-primary/30;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+@layer components {
+  /* Blocky dashed rule — the pixel divider */
+  .rule-pixel {
+    height: 4px;
+    background: repeating-linear-gradient(
+      to right,
+      hsl(var(--foreground) / 0.5) 0 6px,
+      transparent 6px 12px
+    );
+  }
+
+  /* Terminal caret — a blinking block cursor */
+  .caret {
+    display: inline-block;
+    width: 0.55em;
+    height: 1.05em;
+    margin-left: 0.12em;
+    vertical-align: -0.12em;
+    background: hsl(var(--primary));
+    animation: caret-blink 1.05s step-end infinite;
+  }
+  @keyframes caret-blink {
+    0%,
+    50% {
+      opacity: 1;
+    }
+    50.01%,
+    100% {
+      opacity: 0;
+    }
+  }
+
+  /* Masthead: band tone + faint pixel-dot paper */
+  .masthead {
+    background-color: hsl(var(--band));
+    background-image: radial-gradient(
+      hsl(var(--foreground) / 0.06) 1px,
+      transparent 1px
+    );
+    background-size: 7px 7px;
+  }
+}
