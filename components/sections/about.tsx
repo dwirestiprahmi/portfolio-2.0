@@ -3,60 +3,54 @@ import { SectionLabel } from "@/components/section-label";
 
 export function About() {
   return (
-    <section
-      id="about"
-      className="scroll-mt-8 border-border py-8 lg:py-12"
-    >
+    <section id="about" className="scroll-mt-8 py-8 lg:py-10">
       <SectionLabel>About</SectionLabel>
 
-      <div className="mt-8 space-y-5 text-lg leading-relaxed">
-        {about.map((para, i) => (
-          <p
-            key={i}
-            // className={i === 0 ? "text-foreground" : "text-muted-foreground"}
-          >
-            {para}
-          </p>
-        ))}
-      </div>
-      <p className="mt-4 max-w-3xl font-display text-xl font-normal leading-[1.06] tracking-tight">
-        <span>
-          Frontends that feel right. Backends that don't break. That's the main goal.
-        </span>
-      </p>
+      <div className="space-y-5 flex items-center justify-between">
+        <div className="space-y-6">
+          {about.map((para, i) => (
+            <p
+              key={i}
+              className={`text-lg leading-relaxed ${
+                i === 0 ? "text-foreground" : "text-muted-foreground"
+              }`}
+            >
+              {para}
+            </p>
+          ))}
 
-      <div className="mt-14">
+          <p className="pt-4 font-display text-2xl leading-tight tracking-tight text-foreground">
+            Frontends that feel right. Backends that don't break.
+          </p>
+        </div>
+
+        <div className="border-2 border-foreground font-mono text-sm uppercase tracking-widest shadow-[2px_2px_0_0_hsl(var(--foreground))]">
+          <img src="78828847.jpeg" alt="Profile picture" className="w-64" />
+        </div>
+      </div>
+
+      <div className="mt-8">
         <p className="text-xs font-medium uppercase tracking-[0.2em] text-muted-foreground">
           Skills
         </p>
 
-        <dl className="mt-5">
+        <div className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {skills.map((group) => (
-            <div
-              key={group.category}
-              className="grid grid-cols-1 gap-x-8 gap-y-3 border-t border-border py-5 sm:grid-cols-[16rem_1fr] sm:items-baseline"
-            >
-              <dt className="flex items-center gap-2.5 font-medium">
-                <span
-                  aria-hidden
-                  className="inline-block h-2.5 w-2.5 shrink-0"
-                  style={{ backgroundColor: group.accent }}
-                />
-                {group.category}
-              </dt>
-              <dd className="flex flex-wrap gap-x-2 gap-y-2">
-                {group.items.map((item) => (
-                  <span
-                    key={item}
-                    className="bg-secondary px-2.5 py-1 font-mono text-sm text-secondary-foreground"
-                  >
-                    {item}
-                  </span>
-                ))}
-              </dd>
+            <div key={group.category} className="flex gap-4">
+              <div
+                className="mt-1 h-5 w-1 rounded-full"
+                style={{ backgroundColor: group.accent }}
+              />
+
+              <div>
+                <p className="font-medium">{group.category}</p>
+                <p className="mt-1 text-sm text-muted-foreground">
+                  {group.items.join(" • ")}
+                </p>
+              </div>
             </div>
           ))}
-        </dl>
+        </div>
       </div>
     </section>
   );

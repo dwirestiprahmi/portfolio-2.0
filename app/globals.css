@@ -71,7 +71,7 @@
   html {
     scroll-behavior: smooth;
     /* VT323 has a small x-height; nudge the base up for comfortable reading */
-    font-size: 16px;
+    font-size: 14px;
   }
   body {
     @apply bg-background text-foreground;

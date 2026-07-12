@@ -13,10 +13,10 @@ export default function Home() {
       <Rail />
       <main id="top" className="px-6 lg:px-16">
         <Hero />
+        <About />
         <Experience />
         <Education />
         <Work />
-        <About />
         <Contact />
         <footer className="flex flex-col justify-end gap-2 border-t border-border py-10 font-mono text-xs text-muted-foreground sm:flex-row sm:items-center">
           <span>

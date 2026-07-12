@@ -451,7 +451,6 @@ export function Terminal() {
       onClick={() => inputRef.current?.focus()}
       className="cursor-text border-2 border-[#3A322B] bg-[#211B17] shadow-[5px_5px_0_0_hsl(var(--foreground))]"
     >
-      {/* title bar */}
       <div className="flex items-center gap-2 border-b border-[#3A322B] px-4 py-2.5">
         <span className="inline-block h-2.5 w-2.5 bg-[#4A423A]" aria-hidden />
         <span className="inline-block h-2.5 w-2.5 bg-[#4A423A]" aria-hidden />
@@ -461,12 +460,11 @@ export function Terminal() {
         </span>
       </div>
 
-      {/* body */}
       <div
         ref={bodyRef}
         role="log"
         aria-live="polite"
-        className="h-72 overflow-y-auto p-5 font-mono text-sm leading-relaxed sm:h-80 sm:p-6"
+        className="h-72 overflow-y-auto p-5 font-mono text-base leading-relaxed sm:h-80 sm:p-6"
       >
         <div>
           <p className="font-medium leading-tight text-[#C08A7D] mb-2">
@@ -510,7 +508,6 @@ export function Terminal() {
           ),
         )}
 
-        {/* input line */}
         <form onSubmit={submit} className="flex items-center gap-2">
           <label htmlFor="terminal-input" className="shrink-0 text-[#C08A7D]">
             {promptFor(mode)}

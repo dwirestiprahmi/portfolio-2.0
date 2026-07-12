@@ -16,7 +16,7 @@ export const social = [
 ];
 
 export const about = [
-  "I'm a full-stack developer who enjoys connefcting the pretty parts with the powerful parts. Buttons, APIs, databases - I like when everything talks to everthing else nicely.",
+  "I'm a full-stack developer who enjoys connecting the pretty parts with the powerful parts. Buttons, APIs, databases - I like when everything talks to everthing else nicely.",
   "Right now, I'm exploring machine learning and LLMs, and figuring out how to ship them to the cloud without setting anything on fire.",
 ];
 
@@ -132,6 +132,7 @@ export type Role = {
   location: string;
   highlights: string[];
   tags?: string[];
+  logo?: string;
 };
 
 export const workExperience: Role[] = [
@@ -148,6 +149,7 @@ export const workExperience: Role[] = [
       "Built a metric worker service using TypeScript and Express to extract video metadata via FFprobe, analyse encoding complexity with VCA tool, and compute video quality metrics comparing raw and encoded content, saving results to a MongoDB database.",
     ],
     tags: ["TypeScript", "Node.js", "Python", "Vue.js", "PostgreSQL", "Nuxt.js", "Vite", "Docker", "Git", "GitLab CI/CD", "Grafana", "Express.js", "FFprobe", "Chart.js", "MongoDB"],
+    logo: "/fraunhofer-fokus-logo.png",
   },
   {
     period: "Oct 2023 — Nov 2023",
@@ -158,6 +160,7 @@ export const workExperience: Role[] = [
       "Work on the neXboard project on the frontend side with React.js, Typescript and development of tests with Jest",
     ],
     tags: ["React.js", "TypeScript", "Vite", "Jest"],
+    logo: "/nexenio_logo.png"
   },
   {
     period: "Sep 2022 - Mar 2023",
@@ -171,6 +174,7 @@ export const workExperience: Role[] = [
       "Development and implementation of “Customer WebApp”, a full-stack web application for tracking and tracing data between PLM system and the ALM system, using Spring Boot, React.js, and PostgreSQL in a RESTful microservices architecture."
     ],
     tags: ["Camunda BPM", "JavaScript", "Java", "Spring Boot", "React.js", "PostgreSQL"],
+    logo: "/prostep.png"
   },
 ];
 
@@ -179,6 +183,7 @@ export type Study = {
   degree: string;
   school: string;
   detail?: string;
+  type?: string;
 };
 
 export const education: Study[] = [
@@ -186,12 +191,14 @@ export const education: Study[] = [
     period: "Oct 2023 - Apr 2026",
     degree: "Msc - Applied Computer Science",
     school: "HTW Berlin",
-    detail: "Focus on operating systems and databases. Thesis on log-structured storage.",
+    detail: "Expanded knowledge in image processing, machine learning, and full-stack development. Gained practical experience in training machine learning models, and implementing RAG for LLMs. Completed a thesis on the identification and analysis of key contributing factors to energy consumption in video encoding.",
+    type: "M.Sc"
   },
   {
     period: "Apr 2020 - Apr 2023",
     degree: "Bsc - Computer Science",
     school: "Hochschule Darmstadt",
-    detail: "Worked the full Raft / sharded-KV lab sequence on my own time.",
+    detail: "Focus on software engineering and web development. Learned about OOP and design patterns, algorithms and data structures, databases, and web technologies. Completed a thesis on the development of a full-stack web application for tracking and tracing data between PLM and ALM systems.",
+    type: "B.Sc"
   },
 ];

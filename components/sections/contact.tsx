@@ -4,7 +4,7 @@ import { SectionLabel } from "@/components/section-label";
 
 export function Contact() {
   return (
-    <section id="contact" className="scroll-mt-8 border-border py-8 lg:py-12">
+    <section id="contact" className="scroll-mt-8 border-border py-8 lg:py-10">
       <SectionLabel>Contact</SectionLabel>
       <p className="mt-8 font-mono text-2xl font-normal leading-[1.1] tracking-tight">
         <span className="text-muted-foreground">Have something worth building? </span>

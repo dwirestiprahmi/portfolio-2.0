@@ -13,15 +13,15 @@ const socialIcon: Record<string, PixelIconName> = {
 };
 
 const index = [
+  { label: "About", id: "about" },
   { label: "Experience", id: "experience" },
   { label: "Education", id: "education" },
   { label: "Selected Project", id: "work" },
-  { label: "About", id: "about" },
   { label: "Contact", id: "contact" },
 ];
 
 export function Rail() {
-  const [active, setActive] = React.useState<string>("work");
+  const [active, setActive] = React.useState<string>("about");
 
   React.useEffect(() => {
     const observer = new IntersectionObserver(
@@ -50,6 +50,9 @@ export function Rail() {
         </Link>
         <p className="mt-3 font-mono text-base uppercase tracking-[0.12em] text-muted-foreground">
           {site.role}
+        </p>
+        <p className="mt-3 font-mono text-base uppercase tracking-[0.12em] text-muted-foreground">
+          {site.location}
         </p>
         <p className="mt-6 flex items-center gap-2.5 font-mono text-base text-muted-foreground">
           <span className="inline-block h-2.5 w-2.5 bg-primary" aria-hidden />

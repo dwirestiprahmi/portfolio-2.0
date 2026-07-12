@@ -5,7 +5,7 @@ import { Terminal } from "@/components/sections/terminal";
 
 export function Hero() {
   return (
-    <section className="py-8 lg:py-16">
+    <section className="py-8 lg:py-10">
       <Terminal />
       <div className="mt-10 flex flex-wrap items-center gap-x-6 gap-y-3">
         <Button asChild>
